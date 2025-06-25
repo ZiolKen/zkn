@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>@ジオルケン | Bio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      background: url('https://cdn.discordapp.com/attachments/1307911252403552266/1387326071858401400/image0.jpg?ex=685cef96&is=685b9e16&hm=2f2dfed55b39398970ec20ac150a89fea6e9ae00ad802d4539b630325c04f757&') no-repeat center center fixed;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 2rem 3rem;
+      border-radius: 15px;
+      text-align: center;
+      max-width: 450px;
+      width: 90vw;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 2rem;
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    .avatar-wrapper {
+      flex-shrink: 0;
+    }
+
+    .avatar-border {
+      background: linear-gradient(135deg, #a855f7, #f9a8d4);
+      padding: 4px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: block;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .text-group {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.4rem;
+      min-height: 70px;
+      min-width: 190px;
+      flex-grow: 1;
+      text-align: left;
+      overflow: hidden;
+    }
+
+    .text-group h1,
+    .text-group p {
+      font-weight: 400;
+      margin: 0;
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: center;
+    }
+
+    .text-group h1 {
+      min-height: 40px;
+      font-size: 1.8rem;
+      background: linear-gradient(90deg, #a855f7, #f9a8d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 6px #f9a8d4, 0 0 12px #a855f7;
+    }
+
+    .text-group p {
+      min-height: 50px;
+      min-height: 1.8rem;
+      font-size: 1.2rem;
+      opacity: 0.85;
+      margin-top: 0.3rem;
+      color: #80ef80;
+      text-shadow: 0 0 4px #80ef80, 0 0 8px #80ef80;
+    }
+
+    .typing {
+      border-right: 2px solid white;
+      animation: blink-caret 0.8s steps(1) infinite;
+      overflow: hidden;
+      display: inline-block;
+    }
+
+    @keyframes blink-caret {
+      0%, 100% { border-color: white; }
+      50% { border-color: transparent; }
+    }
+
+    .btn img {
+      width: 40px;
+      height: 40px;
+      filter: drop-shadow(0 0 6px #f9a8d4) drop-shadow(0 0 10px #a855f7);
+      transition: transform 0.2s ease, filter 0.3s ease;
+    }
+
+    .btn img:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 10px #f9a8d4) drop-shadow(0 0 14px #a855f7);
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+      width: 100%;
+    }
+
+    .links .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.15);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      transition: background 0.3s ease, transform 0.2s ease;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .links .btn img {
+      width: 35px;
+      height: 35px;
+      filter: brightness(1);
+      transition: filter 0.3s ease;
+    }
+
+    .links .btn:hover {
+      background: rgba(255, 255, 255, 0.35);
+      transform: scale(1.1);
+    }
+
+    .links .btn:hover img {
+      filter: brightness(1.3);
+    }
+
+    footer {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="profile">
+      <div class="avatar-wrapper">
+        <div class="avatar-border">
+          <img
+            src="https://cdn.discordapp.com/attachments/1307911252403552266/1387326209981157408/avt.gif?ex=685cefb7&is=685b9e37&hm=13c1573a1ef0db93840da374d06996373b1ddf7c7160b9c9ba5fb4e104c7c045&"
+            class="avatar"
+            alt="Avatar"
+          />
+        </div>
+      </div>
+
+      <div class="text-group">
+        <h1><span id="name-display" class="typing"></span></h1>
+        <p><span id="desc-display" class="typing"></span></p>
+      </div>
+    </div>
+
+        <div class="links">
+      <a href="https://discord.com/invite/X7QrJvx7Sp" class="btn" title="Discord">
+        <img src="https://img.icons8.com/ios-filled/32/ffffff/discord-logo.png" alt="Discord" />
+      </a>
+      <a href="https://roblox.com/users/3028117931/profile" class="btn" title="Roblox">
+        <img src="https://img.icons8.com/ios-filled/32/ffffff/roblox.png" alt="Roblox" />
+      </a>
+      <a href="https://youtube.com/channel/UCluWdT73ruA48aMjNiX2pWw" class="btn" title="YouTube">
+        <img src="https://img.icons8.com/ios-filled/32/ffffff/youtube-play.png" alt="YouTube" />
+      </a>
+      <a href="https://steamcommunity.com/id/_zkn" class="btn" title="Steam">
+        <img src="https://img.icons8.com/ios-filled/32/ffffff/steam.png" alt="Steam" />
+      </a>
+      <a href="mailto:zknisme@gmail.com" class="btn" title="Mail">
+        <img src="https://img.icons8.com/ios-filled/32/ffffff/apple-mail.png" alt="Mail" />
+      </a>
+      <a href="https://github.com/ZiolKen" class="btn" title="GitHub">
+        <img src="https://img.icons8.com/ios-filled/32/ffffff/github.png" alt="GitHub" />
+      </a>
+      <a href="https://open.spotify.com/user/31fsxiok2pc225ubr7yc7zdzxjie?si=4f8499711cf647b2" class="btn" title="Spotify">
+        <img src="https://img.icons8.com/ios-filled/32/ffffff/spotify.png" alt="Spotify" />
+      </a>
+      <a href="https://x.com/_ZiolKen" class="btn" title="X">
+        <img src="https://img.icons8.com/ios-filled/32/ffffff/twitterx.png" alt="X" />
+      </a>
+      <a href="https://buymeacoffee.com/_zkn" class="btn" title="Buy Me A Coffee">
+        <img src="https://img.icons8.com/ios-filled/32/ffffff/coffee.png" alt="Buy Me A Coffee" />
+      </a>
+      <a href="https://www.paypal.me/zkn0461" class="btn" title="PayPal">
+        <img src="https://img.icons8.com/ios-filled/32/ffffff/paypal.png" alt="PayPal" />
+      </a>
+    </div>
+
+    <footer>
+      <p>© 2025 ZiolKen • ジオルケン</p>
+    </footer>
+  </div>
+
+  <iframe
+    width="0"
+    height="0"
+    src="https://www.youtube.com/embed/L8H7J8VANQo?autoplay=1&loop=1&playlist=L8H7J8VANQo"
+    frameborder="0"
+    allow="autoplay"
+  ></iframe>
+
+  <script>
+    const nameFull = "@ジオルケン";
+    const descFull = "Just random guy.";
+    let nameIndex = 0;
+    let descIndex = 0;
+    let deleting = false;
+
+    function updateTyping() {
+      if (deleting) {
+        nameIndex--;
+        descIndex--;
+        if (nameIndex <= 1) deleting = false;
+      } else {
+        nameIndex++;
+        descIndex++;
+        if (nameIndex >= nameFull.length && descIndex >= descFull.length) deleting = true;
+      }
+
+      document.getElementById("name-display").textContent = nameFull.slice(0, nameIndex);
+      document.getElementById("desc-display").textContent = descFull.slice(0, descIndex);
+      document.title = nameFull.slice(0, nameIndex) + " | Bio";
+
+      setTimeout(updateTyping, deleting ? 100 : 150);
+    }
+
+    updateTyping();
+
+  </script>
+</body>
+</html>
